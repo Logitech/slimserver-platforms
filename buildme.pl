@@ -638,6 +638,9 @@ sub buildMacOSX {
 		## that name, and that the 'pretty mounted name' also matches
 		my $pkgName = $_[0];
 
+		# TODO - remove once we make this the main release
+		$pkgName =~ s/LogitechMediaServer/LogitechMediaServer-BigSur-Monterey/;
+
 		print "INFO: Building package for Mac OSX (Universal)... \n";
 
 		## First, lets make sure we get rid of the files we don't need for this install
@@ -708,7 +711,7 @@ sub buildMacOSX {
 			unlink("$destDir/$pkgName.pkg");
 		}
 		else {
-			move("$destDir/$pkgName-unsigned.pkg", "$destDir/$pkgName-BigSur-Monterey.pkg");
+			move("$destDir/$pkgName-unsigned.pkg", "$destDir/$pkgName.pkg");
 		}
 	}
 }
