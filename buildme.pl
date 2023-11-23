@@ -934,7 +934,11 @@ sub buildWin32 {
 		# unlink("$buildDir/build/Polish.isl");
 		# unlink("$buildDir/build/Russian.isl");
 
-		rmtree("$buildDir/build/Output");
+		print "INFO: Everything is finally ready, renaming the .exe and zip files...\n";
+		print "INFO: Moving [$buildDir/build/Output/SqueezeSetup.exe] to [$destDir/$destFileName.exe]\n";
+		move("$buildDir/build/Output/SqueezeSetup.exe", "$destDir/$destFileName.exe");
+
+		# rmtree("$buildDir/build/Output");
 	}
 }
 
