@@ -897,39 +897,42 @@ sub buildWin32 {
 		copy("$buildDir/platforms/win32/installer/Swedish.isl", "$buildDir/build");
 
 		copy("$buildDir/platforms/win32/installer/logi.bmp", "$buildDir/build");
+		copy("$buildDir/platforms/win32/installer/logitech.bmp", "$buildDir/build");
 		copy("$buildDir/platforms/win32/installer/squeezebox.bmp", "$buildDir/build");
 
 		# replacing build number in installer script
 		system("sed -e \"s/VersionInfoVersion=0.0.0.0/VersionInfoVersion=$rev/\" \"$buildDir/platforms/win32/installer/SqueezeCenter.iss\" > \"$buildDir/build/SqueezeCenter.iss\"");
 		system("cd $buildDir/build; \"$buildDir/platforms/win32/InnoSetup/ISCC.exe\" SqueezeCenter.iss ");
 
-		unlink("$buildDir/build/SqueezeCenter.iss");
-		unlink("$buildDir/build/ServiceManager.iss");
-		unlink("$buildDir/build/SocketTest.iss");
-		unlink("$buildDir/build/StartupModeWizardPage.iss");
-		unlink("$buildDir/build/ServiceEnabler.iss");
+		# unlink("$buildDir/build/SqueezeCenter.iss");
+		# unlink("$buildDir/build/ServiceManager.iss");
+		# unlink("$buildDir/build/SocketTest.iss");
+		# unlink("$buildDir/build/StartupModeWizardPage.iss");
+		# unlink("$buildDir/build/ServiceEnabler.iss");
 
-		unlink("$buildDir/build/psvince.dll");
-		unlink("$buildDir/build/sockettest.dll");
-		unlink("$buildDir/build/ApplicationData.xml");
-		unlink("$buildDir/build/slim.bmp");
-		unlink("$buildDir/build/strings.iss");
+		# unlink("$buildDir/build/psvince.dll");
+		# unlink("$buildDir/build/sockettest.dll");
+		# unlink("$buildDir/build/ApplicationData.xml");
+		# unlink("$buildDir/build/slim.bmp");
+		# unlink("$buildDir/build/logi.bmp");
+		# unlink("$buildDir/build/logitech.bmp");
+		# unlink("$buildDir/build/strings.iss");
 
-		unlink("$buildDir/build/Danish.isl");
-		unlink("$buildDir/build/Default.isl");
-		unlink("$buildDir/build/Dutch.isl");
-		unlink("$buildDir/build/English.isl");
-		unlink("$buildDir/build/Finnish.isl");
-		unlink("$buildDir/build/French.isl");
-		unlink("$buildDir/build/German.isl");
-		unlink("$buildDir/build/Hebrew.isl");
-		unlink("$buildDir/build/Norwegian.isl");
-		unlink("$buildDir/build/Italian.isl");
-		unlink("$buildDir/build/Spanish.isl");
-		unlink("$buildDir/build/Swedish.isl");
-		unlink("$buildDir/build/Czech.isl");
-		unlink("$buildDir/build/Polish.isl");
-		unlink("$buildDir/build/Russian.isl");
+		# unlink("$buildDir/build/Danish.isl");
+		# unlink("$buildDir/build/Default.isl");
+		# unlink("$buildDir/build/Dutch.isl");
+		# unlink("$buildDir/build/English.isl");
+		# unlink("$buildDir/build/Finnish.isl");
+		# unlink("$buildDir/build/French.isl");
+		# unlink("$buildDir/build/German.isl");
+		# unlink("$buildDir/build/Hebrew.isl");
+		# unlink("$buildDir/build/Norwegian.isl");
+		# unlink("$buildDir/build/Italian.isl");
+		# unlink("$buildDir/build/Spanish.isl");
+		# unlink("$buildDir/build/Swedish.isl");
+		# unlink("$buildDir/build/Czech.isl");
+		# unlink("$buildDir/build/Polish.isl");
+		# unlink("$buildDir/build/Russian.isl");
 
 		rmtree("$buildDir/build/Output");
 	}
