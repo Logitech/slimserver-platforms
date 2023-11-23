@@ -186,7 +186,7 @@ var
 	InstallFolder: String;
 begin
 	if (not RegQueryStringValue(HKLM, '{#SBRegKey}', 'Path', InstallFolder)) then
-		InstallFolder := AddBackslash(ExpandConstant('{pf}')) + 'Squeezebox';
+		InstallFolder := AddBackslash(ExpandConstant('{commonpf32}')) + 'Squeezebox';
 
 	Result := InstallFolder;
 end;
