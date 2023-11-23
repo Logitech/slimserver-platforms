@@ -896,12 +896,12 @@ sub buildWin32 {
 		# Swedish is 3rd party - we keep it in our installer folder
 		copy("$buildDir/platforms/win32/installer/Swedish.isl", "$buildDir/build");
 
-		copy("$buildDir/platforms/win32/installer/logitech.bmp", "$buildDir/build");
+		copy("$buildDir/platforms/win32/installer/logi.bmp", "$buildDir/build");
 		copy("$buildDir/platforms/win32/installer/squeezebox.bmp", "$buildDir/build");
 
 		# replacing build number in installer script
 		system("sed -e \"s/VersionInfoVersion=0.0.0.0/VersionInfoVersion=$rev/\" \"$buildDir/platforms/win32/installer/SqueezeCenter.iss\" > \"$buildDir/build/SqueezeCenter.iss\"");
-		system("cd $buildDir/build; \"$buildDir/platforms/win32/InnoSetup/ISCC.exe\" \/Q SqueezeCenter.iss ");
+		system("cd $buildDir/build; \"$buildDir/platforms/win32/InnoSetup/ISCC.exe\" SqueezeCenter.iss ");
 
 		unlink("$buildDir/build/SqueezeCenter.iss");
 		unlink("$buildDir/build/ServiceManager.iss");
